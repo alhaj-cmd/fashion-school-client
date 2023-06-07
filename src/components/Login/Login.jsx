@@ -1,41 +1,59 @@
-// import login from '../../assets/category/login.avif'
-import { useForm } from "react-hook-form";
-const Login = () => {
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/Authprovider";
+import { Link } from "react-router-dom";
 
-    console.log(watch("example"));
+const Login = () => {
+   
+    const {signIn} = useContext(AuthContext);
+
+
+    const handleLogin = event => {
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        // console.log(email,password);
+        signIn(email, password)
+        .then(result =>{
+            const user = result.user;
+            console.log(user);
+        })
+
+    }
+
+
+
     return (
-        <div className="bg-cover  h-60 bg-no-repeat bg-[url('login.avif')] ">
-            {/* <img src={login} alt="" /> */}
-            <form className="p-6 mx-auto text-center h-96" onSubmit={handleSubmit(onSubmit)}>
-                <label>First Name</label> <br />
-                <input
-                    {...register("firstName", {
-                        required: true,
-                        maxLength: 20,
-                        pattern: /^[A-Za-z]+$/i
-                    })}
-                /> <br />
-                {errors?.firstName?.type === "required" && <p>This field is required</p>}
-                {errors?.firstName?.type === "maxLength" && (
-                    <p>First name cannot exceed 20 characters</p>
-                )} <br />
-                {errors?.firstName?.type === "pattern" && (
-                    <p>Alphabetical characters only</p>
-                )}
-                <label>Laste Name</label> <br />
-                <input {...register("lastName", { pattern: /^[A-Za-z]+$/i })} />
-                {errors?.lastName?.type === "pattern" && (
-                    <p>Alphabetical characters only</p>
-                )} <br />
-                <label>Age</label>a <br />
-                <input {...register("age", { min: 18, max: 99 })} />
-                {errors.age && (
-                    <p>You Must be older then 18 and younger then 99 years old</p>
-                )} <br />
-                <input type="submit" />
-            </form>
+        <div className="bg-cover sm:bg-cover h-1/2 bg-no-repeat bg-[url('login.avif')] ">
+          <div className="hero min-h-screen ">
+  <div className="hero-content flex-col ">
+   
+            <h2 className="text-3xl font-bold">LogIn</h2>
+    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-red-400">
+      <form onSubmit={handleLogin} className="card-body">
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">Email</span>
+          </label>
+          <input type="email" name="email" placeholder="email" className="input input-bordered" />
+        </div>
+        <div className="form-control">
+          <label className="label">
+            <span  className="label-text">Password</span>
+          </label>
+          <input name='password' type='password' className="input input-bordered" />
+          <label className="label">
+            <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+          </label>
+        </div>
+        <div className="form-control mt-6">
+          <button className="btn btn-primary">Login</button>
+        </div>
+      </form>
+      <p>Do not have an Accounts? <Link to='/register' className="text-blue-500">Registration !!</Link></p>
+    </div>
+  </div>
+</div>
         </div>
     );
 };

@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 
 const Register = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
@@ -8,6 +9,7 @@ const Register = () => {
     return (
         <div>
             <form onSubmit={handleSubmit(onSubmit)}>
+                <h3>This is Register</h3>
       {/* register your input into the hook by invoking the "register" function */}
       <input defaultValue="test" {...register("example")} />
       
@@ -18,6 +20,7 @@ const Register = () => {
       
       <input type="submit" />
     </form>
+    <p>Already have an Accounts!! <Link className="text-blue-500" to='/signin'>Sign In</Link></p>
         </div>
     );
 };
