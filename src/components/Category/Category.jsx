@@ -39,15 +39,15 @@ const Category = () => {
         modules={[FreeMode, Pagination]}
         className="mySwiper my-10"
       >
-        <SwiperSlide><img className="h-60"  src={category1} alt="" /></SwiperSlide>
-        <SwiperSlide><img className="h-60" src={category2} alt="" /></SwiperSlide>
-        <SwiperSlide><img className="h-60" src={category3} alt="" /></SwiperSlide>
-        <SwiperSlide><img className="h-60" src={category4} alt="" /></SwiperSlide>
-        <SwiperSlide><img className="h-60" src={category5} alt="" /></SwiperSlide>
-        <SwiperSlide><img className="h-60" src={category6} alt="" /></SwiperSlide>
-        <SwiperSlide><img className="h-60" src={category7} alt="" /></SwiperSlide>
-        <SwiperSlide><img className="h-60" src={category8} alt="" /></SwiperSlide>
-        <SwiperSlide><img className="h-60" src={category9} alt="" /></SwiperSlide>
+        <SwiperSlide><img className="h-56 "  src={category1} alt="" /></SwiperSlide>
+        <SwiperSlide><img className="h-56 " src={category2} alt="" /></SwiperSlide>
+        <SwiperSlide><img className="h-56 " src={category3} alt="" /></SwiperSlide>
+        <SwiperSlide><img className="h-56 " src={category4} alt="" /></SwiperSlide>
+        <SwiperSlide><img className="h-56 " src={category5} alt="" /></SwiperSlide>
+        <SwiperSlide><img className="h-56 " src={category6} alt="" /></SwiperSlide>
+        <SwiperSlide><img className="h-56 " src={category7} alt="" /></SwiperSlide>
+        <SwiperSlide><img className="h-56 " src={category8} alt="" /></SwiperSlide>
+        <SwiperSlide><img className="h-56 " src={category9} alt="" /></SwiperSlide>
       </Swiper>
         </>
     );

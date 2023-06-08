@@ -1,0 +1,56 @@
+[
+    {
+      "id": 1,
+      "name": "Fashion Institute",
+      "instructor_name": "Anna Johnson",
+      "available_seats": 10,
+      "price": 50,
+      "rating": 4.2,
+      "image": "https://img.freepik.com/free-photo/smiling-young-tailor-sewing-clothes_144627-77864.jpg?size=626&ext=jpg&ga=GA1.2.1132668939.1664394842&semt=ais"
+    },
+    {
+      "id": 2,
+      "name": "Fashion Academy",
+      "instructor_name": "John Anna",
+      "available_seats": 15,
+      "price": 35,
+      "rating": 5,
+      "image": "https://t4.ftcdn.net/jpg/01/42/58/61/240_F_142586151_dlyWxULb52CwJvXvcKO5KQWKuwDkz4vT.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Style School",
+      "instructor_name": "Emma Thompson",
+      "available_seats": 8,
+      "price": 25,
+      "rating": 4.7,
+      "image": "https://img.freepik.com/free-photo/medium-shot-smiley-woman-indoors_23-2148875315.jpg?size=626&ext=jpg&ga=GA1.2.1132668939.1664394842&semt=ais"
+    },
+    {
+      "id": 4,
+      "name": "Fashion Hub",
+      "instructor_name": "Michael Adda",
+      "available_seats": 20,
+      "price": 40,
+      "rating": 4.4,
+      "image": "https://img.freepik.com/free-photo/brunette-girl-gray-dress-yellow-jacket-is-standing-near-table-workshop-studio-she-has-lot-creative-stuff-table-she-is-smiling-camera_197531-836.jpg?size=626&ext=jpg&ga=GA1.1.1132668939.1664394842&semt=ais"
+    },
+    {
+      "id": 5,
+      "name": "Design Institute",
+      "instructor_name": "Sophia Anderson",
+      "available_seats": 12,
+      "price": 30,
+      "rating": 4.9,
+      "image": "https://img.freepik.com/free-photo/working-with-team-about-new-dress_329181-14324.jpg?size=626&ext=jpg&ga=GA1.2.1132668939.1664394842&semt=ais"
+    },
+    {
+      "id": 6,
+      "name": "Fashion Studio",
+      "instructor_name": "David luisa",
+      "available_seats": 25,
+      "price": 45,
+      "rating": 4.8,
+      "image": "https://img.freepik.com/free-photo/workplace-seamstress-office-with-sewing-machine-table_627829-5174.jpg?size=626&ext=jpg&ga=GA1.2.1132668939.1664394842&semt=ais"
+    }
+  ]
