@@ -1,7 +1,17 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Providers/Authprovider";
 
 
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext);
+    console.log(user);
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.log(error));
+    }
     return (
         <div>
             <div className="navbar fixed z-10 bg-opacity-30 max-w-screen-lg  bg-[#ede9e0] ">
@@ -14,7 +24,9 @@ const Navbar = () => {
                             <li><Link>Home</Link></li>
                             <li><Link>Instructors</Link></li>
                             <li><Link>Classes</Link></li>
-                            <li><Link>LogIn</Link></li>
+                           {
+                            user && <li><Link>DashBoard</Link></li>
+                           }
 
                         </ul>
                     </div>
@@ -25,11 +37,30 @@ const Navbar = () => {
                         <li><Link>Home</Link></li>
                         <li><Link>Instructors</Link></li>
                         <li><Link>Classes</Link></li>
-                       
+                        {
+                            user && <li><Link>DashBoard</Link></li>
+                           }
+
+
                     </ul>
                 </div>
                 <div className="navbar-end">
-                  <button className="btn  btn-error"><Link  to='/login'>LogIn</Link></button>
+                    {/* <li>   <p>{user.displayName}</p></li> */}
+                    {
+                        user ? <>
+
+                            <label tabIndex={0} className="btn btn-ghost mr-2 btn-circle avatar">
+                                <div className="w-10  text-primary rounded-full ">
+
+                                    <img src={user?.photoURL} alt="no photo" />
+                                </div>
+                            </label>
+                            <button onClick={handleLogOut} className="btn  btn-error"><Link to='/'>LogOut</Link></button></> : <>
+
+                            <button className="btn  btn-error"><Link to='/login'>LogIn</Link></button>
+                        </>
+                    }
+
                 </div>
             </div>
         </div>

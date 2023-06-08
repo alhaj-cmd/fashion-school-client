@@ -5,7 +5,7 @@ import Main from "../Layout/Main";
 import Home from "../components/Home/Home";
 import ErrorPages from "../components/Shared/Footer/ErrorPage/ErrorPage";
 import Login from "../components/Login/Login";
-import Registration from "../components/Login/Registration";
+import Register from "../components/Register/Register";
 
 
 
@@ -25,7 +25,7 @@ import Registration from "../components/Login/Registration";
         },
         {
           path:'register',
-          element:<Registration></Registration>
+          element:<Register></Register>
         }
     ]
     },
