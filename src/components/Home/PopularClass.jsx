@@ -18,7 +18,7 @@ const PopularClass = () => {
             heading='Popular'
             subHeading='Classes'
             ></SectionTitle>
-            <div className=" my-8  grid grid-cols-3 gap-4">
+            <div className=" my-8  grid md:grid-cols-3  gap-4">
                 {
                   menu.map(item => <ClassItem key={item._id}
                   item={item}

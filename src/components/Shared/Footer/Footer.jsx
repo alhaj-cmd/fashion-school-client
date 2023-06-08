@@ -1,11 +1,16 @@
-import logo from '../../../assets/banner/logo.avif'
+import logo from '../../../assets/banner/logo1.avif'
 
 const Footer = () => {
     return (
         <div>
             <footer className="footer footer-center p-10 bg-gray-600 text-white ">
                 <div>
-                    <img className='h-40 w-60 rounded-xl' src={logo} alt="" />
+                    <label tabIndex={0} className="btn btn-ghost mr-2 btn-circle avatar">
+                                <div className="w-16  text-primary rounded-full ">
+
+                                    <img src={logo} alt="no photo" />
+                                </div>
+                            </label>
                     <p className="font-bold">
                         <span className="text-red-300 text-2xl">Fashion</span> School. <br />Providing reliable tech since 2000
                     </p>
