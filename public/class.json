@@ -1,56 +1,57 @@
 [
     {
       "id": 1,
-      "name": "Fashion Institute",
-      "instructor_name": "Anna Johnson",
-      "available_seats": 10,
-      "price": 50,
-      "rating": 4,
-      "image": "https://img.freepik.com/free-photo/smiling-young-tailor-sewing-clothes_144627-77864.jpg?size=626&ext=jpg&ga=GA1.2.1132668939.1664394842&semt=ais"
+      "class-name": "Streetwear",
+      "name": "John Doe",
+      "student": 95,
+      "details":"Streetwear is a fashion style that originated from urban culture and is heavily influenced by street fashion, music, and youth subcultures. It is known for its casual and edgy aesthetic, blending elements of sportswear, hip-hop fashion, and contemporary street style.",
+      "image": "https://img.freepik.com/free-photo/white-simple-apparel-street-style-men-women-s-clothing-outdoor-shoot_53876-119818.jpg?size=626&ext=jpg&ga=GA1.2.1132668939.1664394842&semt=sph",
+      "email": "john.doe@example.com"
     },
     {
       "id": 2,
-      "name": "Fashion Academy",
-      "instructor_name": "John Anna",
-      "available_seats": 15,
-      "price": 35,
-      "rating": 3,
-      "image": "https://t4.ftcdn.net/jpg/01/42/58/61/240_F_142586151_dlyWxULb52CwJvXvcKO5KQWKuwDkz4vT.jpg"
+      "class-name": "Casual",
+      "name": "John jane",
+      "details":"Casual fashion is a style that emphasizes comfort, practicality, and a relaxed approach to dressing. It is versatile and suitable for everyday wear in various settings.",
+      "student": 93,
+      "email": "jane.smith@example.com",
+      "image": "https://t3.ftcdn.net/jpg/05/46/34/22/240_F_546342206_DyHhNk2BUanaxe80fREk46vADcRy4eHT.jpg"
     },
     {
       "id": 3,
-      "name": "Style School",
+      "class-name": "Sporty",
       "instructor_name": "Emma Thompson",
-      "available_seats": 8,
-      "price": 25,
-      "rating": 5,
-      "image": "https://img.freepik.com/free-photo/medium-shot-smiley-woman-indoors_23-2148875315.jpg?size=626&ext=jpg&ga=GA1.2.1132668939.1664394842&semt=ais"
+      "email": "mike.johnson@example.com",
+      "details":"The sporty fashion style is inspired by athletic wear and incorporates elements of comfort, functionality, and an active lifestyle into everyday fashion. It is characterized by a relaxed and casual look with a sporty edge.",
+      "student": 90,
+      "image": "https://t4.ftcdn.net/jpg/02/94/61/05/240_F_294610557_657jZzmmcGVSU6AjjJrN8ceud9NF9Z05.jpg"
     },
     {
       "id": 4,
-      "name": "Fashion Hub",
-      "instructor_name": "Michael Adda",
-      "available_seats": 20,
-      "price": 40,
-      "rating": 3,
-      "image": "https://img.freepik.com/free-photo/brunette-girl-gray-dress-yellow-jacket-is-standing-near-table-workshop-studio-she-has-lot-creative-stuff-table-she-is-smiling-camera_197531-836.jpg?size=626&ext=jpg&ga=GA1.1.1132668939.1664394842&semt=ais"
+      "class-name": "Formal",
+      "name": "Emily Davis",
+      "email": "emily.davis@example.com",
+      "student": 98,
+      "details":"Formal fashion is characterized by sophisticated, polished, and elegant attire typically worn for formal occasions and dress codes. It emphasizes tailored silhouettes, refined details, and a more structured and traditional aesthetic.",
+      "image": "https://img.freepik.com/free-photo/thoughtful-younsgter-dressed-hoody-leggings-looks-pensively-aside_273609-18391.jpg?size=626&ext=jpg&ga=GA1.2.1132668939.1664394842&semt=sph"
     },
     {
       "id": 5,
-      "name": "Design Institute",
-      "instructor_name": "Sophia Anderson",
-      "available_seats": 12,
-      "price": 30,
-      "rating": 3,
-      "image": "https://img.freepik.com/free-photo/working-with-team-about-new-dress_329181-14324.jpg?size=626&ext=jpg&ga=GA1.2.1132668939.1664394842&semt=ais"
+      "class-name": "Romantic",
+      "name": "Alex Wilson",
+      "email": "alex.wilson@example.com",
+      "student": 97,
+      "details":"The Romantic fashion style is characterized by delicate and feminine elements. It often draws inspiration from the past, incorporating soft fabrics, intricate details, and a dreamy aesthetic. ",
+  
+      "image": "https://t4.ftcdn.net/jpg/03/58/64/15/240_F_358641583_tsY3BP2u26OgeI2f2DHjDC5GKsIGzhwj.jpg"
     },
     {
       "id": 6,
-      "name": "Fashion Studio",
-      "instructor_name": "David luisa",
-      "available_seats": 25,
-      "price": 45,
-      "rating": 4,
-      "image": "https://img.freepik.com/free-photo/workplace-seamstress-office-with-sewing-machine-table_627829-5174.jpg?size=626&ext=jpg&ga=GA1.2.1132668939.1664394842&semt=ais"
+      "class-name": "Classic",
+      "name": "Sarah Thompson",
+      "details":"The classic fashion style is timeless, sophisticated, and often inspired by traditional and vintage elements. It emphasizes clean lines, timeless silhouettes, and high-quality materials. Classic fashion is known for its elegance, simplicity, and refined aesthetics. ",
+      "student": 96,
+      "email": "sarah.thompson@example.com",
+      "image": "https://img.freepik.com/free-photo/young-people-trendy-wear-posing-street_23-2148134023.jpg?size=626&ext=jpg&ga=GA1.1.1132668939.1664394842&semt=sph"
     }
   ]

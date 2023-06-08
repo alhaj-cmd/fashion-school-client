@@ -1,5 +1,4 @@
 
-// import { useEffect, useState } from 'react';
 import SectionTitle from '../Shared/SectionTitle/SectionTitle';
 import ClassItem from './ClassItem';
 import useHook from '../Hooks/useHook';
@@ -7,12 +6,7 @@ import useHook from '../Hooks/useHook';
 const PopularClass = () => {
 
     const [menu] = useHook();
-    // const [menu, setMenu] = useState([]);
-    // useEffect(() => {
-    //     fetch('class.json')
-    //     .then(res => res.json())
-    //     .then(data => setMenu(data))
-    // },[])
+   
 
     return (
         <section>
