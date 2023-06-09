@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import SocialLogin from "./SocialLogin";
 
 const Login = () => {
   const { signIn } = useContext(AuthContext);
@@ -113,11 +114,14 @@ const Login = () => {
                 </label>
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-primary">Login</button>
+                <button className="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded">
+                  LogIn
+                </button>
               </div>
 
             </form>
-            <p className="mt-4">Do not have an Accounts? <Link to='/register' className="font-bold text-primary ">Registration !!</Link></p>
+            <p className="my-2">Do not have an Accounts? <Link to='/register' className="font-bold text-primary ">Registration !!</Link></p>
+            <SocialLogin></SocialLogin>
           </div>
         </div>
       </div>
