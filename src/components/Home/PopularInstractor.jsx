@@ -8,8 +8,8 @@ const PopularInstractor = () => {
     return (
         <section>
             <SectionTitle
-            heading='Popular'
-            subHeading='Classes'
+            heading='Instractors'
+            subHeading='Popular'
             ></SectionTitle>
             <div className=" my-8  grid md:grid-cols-2  gap-4">
                 {

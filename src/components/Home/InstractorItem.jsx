@@ -1,4 +1,4 @@
-import { FaBeer } from 'react-icons/fa';
+import {  FaMale } from 'react-icons/fa';
 
 const InstractorItem = ({item}) => {
     const {name, image, student, details}  = item;
@@ -10,7 +10,7 @@ const InstractorItem = ({item}) => {
                 <h3 className="uppercase font-bold">{name} -----------</h3>
                 <p>{details}</p>
             </div>
-            <p className="text-yellow-500"><FaBeer /> {student}</p>
+            <p className="flex"><span className='text-red-400 font-bold'><FaMale /></span>{student}</p>
         </div>
         </div>
     );
