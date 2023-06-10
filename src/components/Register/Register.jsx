@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/Authprovider";
 import Swal from "sweetalert2";
+import SocialLogin from "../Login/SocialLogin";
 
 
 const Register = () => {
@@ -18,16 +19,31 @@ const navigate = useNavigate();
       console.log(loagedUser);
       updateUserProfile(data.name, data.photoURL)
       .then(() =>{
-        console.log('user photo')
-        reset();
-        Swal.fire({
-          position: 'top-end',
-          icon: 'success',
-          title: 'User created Successfully',
-          showConfirmButton: false,
-          timer: 1500
+        
+        const saveUser = {name:data.name, email:data.email}
+        fetch('http://localhost:5000/users',{
+          method:'POST',
+          headers:{
+            'content-type':'application/json'
+          },
+          body:JSON.stringify(saveUser)
         })
-        navigate('/')
+        .then(res => res.json())
+        .then(data =>{
+          if(data.insertedId){
+            reset();
+            Swal.fire({
+              position: 'top-end',
+              icon: 'success',
+              title: 'User created Successfully',
+              showConfirmButton: false,
+              timer: 1500
+            })
+            navigate('/')
+          }
+        })
+
+      
       })
       .catch(error => console.log(error))
     })
@@ -48,28 +64,28 @@ const navigate = useNavigate();
                   <span className="label-text">Name</span>
                 </label>
                 <input type="text" {...register("name", { required: true })} placeholder="Type Your Name" className="input input-bordered" />
-                {errors.name && <span>Name field is required</span>}
+                {errors.name && <span className="text-primary">Name field is required</span>}
               </div>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
                 </label>
                 <input type="email" {...register("email", { required: true })} placeholder="Type your E-mail" className="input input-bordered" />
-                {errors.email && <span>User Email is required</span>}
+                {errors.email && <span className="text-primary">User Email is required</span>}
               </div>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Password</span>
                 </label>
                 <input {...register("password", { required: true, minLength:6, maxLength:15 })} type='password' className="input input-bordered" />
-                {errors.password?.type === 'required' && <span>Password is required</span>}
+                {errors.password?.type === 'required' && <span className="text-primary">Password is required</span>}
               </div>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Confirm Password</span>
                 </label>
                 <input {...register("password", { required: true, minLength:6, maxLength:15 })} type='password' className="input input-bordered" />
-                {errors.password?.type === 'required' && <span>Confirm password is required</span>}
+                {errors.password?.type === 'required' && <span className="text-primary">Confirm password is required</span>}
 
               </div>
               <div className="form-control">
@@ -77,7 +93,7 @@ const navigate = useNavigate();
                   <span className="label-text">Photo URl</span>
                 </label>
                 <input type="photoURL" placeholder="photo url" {...register("photoURL", { required: true })} className="input input-bordered" />
-                {errors.photoURL && <span>Photo URL is required</span>}
+                {errors.photoURL && <span className="text-primary">Photo URL is required</span>}
 
               </div>
               <div className="form-control">
@@ -94,10 +110,11 @@ const navigate = useNavigate();
               </div>
              
               <div className="form-control mt-6">
-                <button className="btn btn-primary">Register</button>
+                <button className="btn bg-red-500 hover:bg-red-600 border-none">Register</button>
               </div>
             </form>
             <p className="mt-4 text-center">Already have an Accounts? <Link to='/login' className="font-bold text-primary ">LogIn !!</Link></p>
+          <SocialLogin></SocialLogin>
           </div>
         </div>
       </div>

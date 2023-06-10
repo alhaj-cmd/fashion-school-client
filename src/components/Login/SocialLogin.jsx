@@ -6,7 +6,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 
 
 const SocialLogin = () => {
-    const {googleSingIn} = useContext(AuthContext);
+    const {googleSignIn} = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
   
@@ -14,24 +14,49 @@ const SocialLogin = () => {
 
     const handleGoogleSignIn = () =>{
 
-        googleSingIn()
+        googleSignIn()
         .then(result =>{
             const loggedInUser = result.user;
             console.log(loggedInUser);
-            navigate(from, { replace: true });
+
+            const saveUser = {name:loggedInUser.displayName, email:loggedInUser.email}
+            fetch('http://localhost:5000/users',{
+                method:'POST',
+                headers:{
+                  'content-type':'application/json'
+                },
+                body:JSON.stringify(saveUser)
+              })
+              .then(res => res.json())
+              .then(data =>{
+                if(data.insertedId){
+                //   reset();
+                //   Swal.fire({
+                //     position: 'top-end',
+                //     icon: 'success',
+                //     title: 'User created Successfully',
+                //     showConfirmButton: false,
+                //     timer: 1500
+                //   })
+                navigate(from, { replace: true });
+                }
+              })
+
+
+           
         })
     }
 
 
     return (
-        <div>
+        <button onClick={handleGoogleSignIn}>
             <a href="#" className="flex items-center justify-center px-4 py-2 space-x-2 bg-red-600 text-white rounded transition hover:bg-red-800">
            <div className='h-6 w-6'>
             <img src={logo} alt="" />
            </div>
-                <span onClick={handleGoogleSignIn} className="text-xs font-bold">Sign in with Google</span>
+                <span  className="text-xs font-bold">Sign in with Google</span>
             </a>
-        </div>
+        </button>
     );
 };
 
