@@ -9,6 +9,8 @@ import Register from "../components/Register/Register";
 import Instractors from "../components/Instractors/Instractors";
 import Dashboard from "../Layout/Dashboard";
 import Mycart from "../components/Pages/AdminDb/Mycart";
+import PrivetRoute from "./PrivetRoute";
+import AllUsers from "../Layout/AllUsers/AllUsers";
 
 
 
@@ -38,11 +40,15 @@ import Mycart from "../components/Pages/AdminDb/Mycart";
     },
     {
       path:'/dashboard',
-      element:<Dashboard></Dashboard>,
+      element:<PrivetRoute><Dashboard></Dashboard></PrivetRoute>,
       children:[
         {
           path:'mycart',
           element:<Mycart></Mycart>
+        },
+        {
+          path:'allusers',
+          element:<AllUsers></AllUsers>
         }
       ]
     }
