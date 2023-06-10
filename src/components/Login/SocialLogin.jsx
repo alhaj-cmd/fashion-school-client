@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import logo from '../../assets/google.png'
 import { AuthContext } from '../../Providers/Authprovider';
 import { useLocation, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 
 const SocialLogin = () => {
@@ -28,18 +29,18 @@ const SocialLogin = () => {
                 body:JSON.stringify(saveUser)
               })
               .then(res => res.json())
-              .then(data =>{
-                if(data.insertedId){
+              .then(()=>{
+               
                 //   reset();
-                //   Swal.fire({
-                //     position: 'top-end',
-                //     icon: 'success',
-                //     title: 'User created Successfully',
-                //     showConfirmButton: false,
-                //     timer: 1500
-                //   })
+                  Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'SignUp User Successfully',
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
                 navigate(from, { replace: true });
-                }
+                
               })
 
 
