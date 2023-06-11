@@ -8,10 +8,16 @@ import Login from "../components/Login/Login";
 import Register from "../components/Register/Register";
 import Instractors from "../components/Instractors/Instractors";
 import Dashboard from "../Layout/Dashboard";
-import Mycart from "../components/Pages/AdminDb/Mycart";
 import PrivetRoute from "./PrivetRoute";
 import AllUsers from "../Layout/AllUsers/AllUsers";
 import ClassesItem from "../components/Instractors/ClassesItem";
+import ManageClass from "../components/Pages/AdminDb/ManageClass";
+import ManageUser from "../components/Pages/AdminDb/ManageUser";
+import AddAclass from "../components/Pages/InstractorDb/AddAclass";
+import MyClass from "../components/Pages/InstractorDb/MyClass";
+import EnrolClass from "../components/Pages/StudentDb/EnrolClass";
+import PaymentClass from "../components/Pages/StudentDb/PaymentClass";
+import SelectedClass from "../components/Pages/StudentDb/SelectedClass";
 
 
 
@@ -48,8 +54,32 @@ import ClassesItem from "../components/Instractors/ClassesItem";
       element:<PrivetRoute><Dashboard></Dashboard></PrivetRoute>,
       children:[
         {
-          path:'mycart',
-          element:<Mycart></Mycart>
+          path:'manageclass',
+          element:<ManageClass></ManageClass>
+        },
+        {
+          path:'manageuser',
+          element:<ManageUser></ManageUser>
+        },
+        {
+          path:'addAclass',
+          element:<AddAclass></AddAclass>
+        },
+        {
+          path:'myclass',
+          element:<MyClass></MyClass>
+        },
+        {
+          path:'enrollclass',
+          element:<EnrolClass></EnrolClass>
+        },
+        {
+          path:'selectedclass',
+          element:<SelectedClass></SelectedClass>
+        },
+        {
+          path:'payment',
+          element:<PaymentClass></PaymentClass>
         },
         {
           path:'allusers',

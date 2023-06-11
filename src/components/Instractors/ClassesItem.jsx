@@ -5,10 +5,12 @@ import { Helmet } from 'react-helmet';
 import { AuthContext } from '../../Providers/Authprovider';
 import Swal from 'sweetalert2';
 import { useLocation, useNavigate } from 'react-router-dom';
+import useAddCard from '../Hooks/useAddCard';
 
 const ClassesItem = () => {
     const [classesItem] = useHook();
     const {user} = useContext(AuthContext);
+    const [, refetch] = useAddCard();
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -17,7 +19,7 @@ const ClassesItem = () => {
       console.log(item)
       if(user && user.email){
         const orderItem ={name:item.name, classId:item._id, Instractor:item.instructor_name, image:item.image, price:item.price, email:user.email}
-        fetch('http://localhost:5000/addCart',{
+        fetch('http://localhost:5000/addCard',{
           method:'POST',
           headers:{
             'content-type':'application/json'
@@ -27,6 +29,7 @@ const ClassesItem = () => {
         .then(res => res.json())
         .then(data => {
           if(data.insertedId){
+            refetch();
             Swal.fire({
               position: 'top-end',
               icon: 'success',

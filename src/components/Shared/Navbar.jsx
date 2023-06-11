@@ -24,6 +24,7 @@ const Navbar = () => {
                             <li><Link to='/'>Home</Link></li>
                             <li><Link to='/instrators'>Instructors</Link></li>
                             <li><Link>Classes</Link></li>
+                            
                            {
                             user && <li><Link to='/dashboard/mycart'>DashBoard</Link></li>
                            }
@@ -37,8 +38,9 @@ const Navbar = () => {
                         <li><Link to='/'>Home</Link></li>
                         <li><Link to='/instrators'>Instructors</Link></li>
                         <li><Link to='/classitem'>Classes</Link></li>
+                        <input type="checkbox" className="toggle toggle-error" checked />
                         {
-                            user && <li><Link to='/dashboard/mycart'>DashBoard</Link></li>
+                            user && <li><Link to='/dashboard'>DashBoard</Link></li>
                            }
 
 
