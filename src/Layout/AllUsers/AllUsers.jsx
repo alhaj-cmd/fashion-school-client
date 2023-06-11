@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { Helmet } from "react-helmet";
-import {  FaMarkdown, FaTrash } from "react-icons/fa";
+import {  FaTrash, FaUserShield } from "react-icons/fa";
 import Swal from "sweetalert2";
 
 
@@ -18,6 +18,7 @@ const AllUsers = () => {
         .then(res => res.json() )
         .then(data => {
             if(data.modifiedCount){
+                refetch()
                 Swal.fire({
                     position:'top-end',
                     icon:'success',
@@ -36,6 +37,7 @@ const AllUsers = () => {
         .then(res => res.json() )
         .then(data => {
             if(data.modifiedCount){
+                refetch()
                 Swal.fire({
                     position:'top-end',
                     icon:'success',
@@ -78,13 +80,19 @@ const AllUsers = () => {
                                     <td>{index + 1}</td>
                                     <td>{user.name}</td>
                                     <td>{user.email}</td>
-                                    <td className="bg-red-500">{user.role === 'admin' ? ('admin' &&
+                                    {/* <td className="bg-red-500">{user.role === 'admin' ? ('admin' &&
                                         <button onClick={() => handleMakeAdmin(user)}><FaMarkdown/></button>
                                     ) : user.role === 'instractor' ? (
                                         ('instractor' &&
                                             <button onClick={() => handleMakeInstrator(user)}><FaMarkdown/></button>)
-                                    ) : <FaMarkdown/>
+                                    ) : <button onClick={() => handleMakeInstrator(user)}><FaMarkdown/></button>
                                     }
+                                    </td> */}
+                                    <td className="text-red-500">{user.role === 'admin' ? 'admin' :
+                                        <button onClick={() => handleMakeAdmin(user)}><FaUserShield/></button>}
+                                    </td>
+                                    <td className="text-red-500">{user.role == 'instractor' ? 'instractor' :
+                                        <button onClick={() => handleMakeInstrator(user)}><FaUserShield/></button>}
                                     </td>
                                     <td className="text-red-500"><button onClick={() => handleDelete(user)}><FaTrash></FaTrash></button></td>
                                 </tr>
