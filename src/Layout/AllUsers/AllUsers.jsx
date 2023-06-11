@@ -91,7 +91,7 @@ const AllUsers = () => {
                                     <td className="text-red-500">{user.role === 'admin' ? 'admin' :
                                         <button onClick={() => handleMakeAdmin(user)}><FaUserShield/></button>}
                                     </td>
-                                    <td className="text-red-500">{user.role == 'instractor' ? 'instractor' :
+                                    <td className="text-red-500">{user.role === 'instractor' ? 'instractor' :
                                         <button onClick={() => handleMakeInstrator(user)}><FaUserShield/></button>}
                                     </td>
                                     <td className="text-red-500"><button onClick={() => handleDelete(user)}><FaTrash></FaTrash></button></td>

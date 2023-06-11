@@ -11,6 +11,7 @@ import Dashboard from "../Layout/Dashboard";
 import Mycart from "../components/Pages/AdminDb/Mycart";
 import PrivetRoute from "./PrivetRoute";
 import AllUsers from "../Layout/AllUsers/AllUsers";
+import ClassesItem from "../components/Instractors/ClassesItem";
 
 
 
@@ -35,6 +36,10 @@ import AllUsers from "../Layout/AllUsers/AllUsers";
         {
           path:'register',
           element:<Register></Register>
+        },
+        {
+          path:'classitem',
+          element:<ClassesItem></ClassesItem>
         }
     ]
     },

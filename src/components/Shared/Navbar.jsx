@@ -36,7 +36,7 @@ const Navbar = () => {
                     <ul className="menu menu-horizontal font-bold px-1">
                         <li><Link to='/'>Home</Link></li>
                         <li><Link to='/instrators'>Instructors</Link></li>
-                        <li><Link>Classes</Link></li>
+                        <li><Link to='/classitem'>Classes</Link></li>
                         {
                             user && <li><Link to='/dashboard/mycart'>DashBoard</Link></li>
                            }

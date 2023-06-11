@@ -11,8 +11,9 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+  console.log(location);
 
-  const from = location.state?.from?.pathName || "/";
+  const from = location.state?.from?.pathname || "/";
 
 
   // password show click hadle start
