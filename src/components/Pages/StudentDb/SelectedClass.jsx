@@ -1,19 +1,49 @@
 import { Helmet } from "react-helmet";
 import useAddCard from "../../Hooks/useAddCard";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
 const SelectedClass = () => {
-    const [cart] = useAddCard();
+    const [cart, refetch] = useAddCard();
+
+    const handleDelete = (item) =>{
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/addCard/${item._id}`,{
+                    method:'DELETE'
+                })
+                .then(res => res.json())
+                .then(data => {
+                    if(data.deletedCount>0){
+                        refetch()
+                        Swal.fire(
+                          'Deleted!',
+                          'Your file has been deleted.',
+                          'success'
+                        )
+                    }
+                })
+            }
+          })
+
+    }
+
     return (
-        <div>
+        <div className="ml-2">
             <Helmet>
                 <title>Fashion School | My Selected Class</title>
             </Helmet>
             <div className="uppercase font-semibold h-[60px] flex justify-between items-center mt-10 md:mr-6">
                 <h3 className="text-2xl">Total Add Card: {cart.length}</h3>
-
-                <Link to='/dashboard/payment'>  <button className="btn btn-error" >Pay</button></Link>
 
             </div>
 
@@ -29,6 +59,7 @@ const SelectedClass = () => {
                             <th>Instructor</th>
                             <th>E-mail</th>
                             <th>Price</th>
+                            <th></th>
                             <th></th>
                         </tr>
                     </thead>
@@ -60,7 +91,10 @@ const SelectedClass = () => {
                                         {item?.price}
                                     </td>
                                     <th>
-                                        <button className="btn btn-error">Delete</button>
+                                    <Link to='/dashboard/payment'>  <button className="btn btn-success" >Pay</button></Link>
+                                    </th>
+                                    <th>
+                                        <button onClick={() =>handleDelete(item)} className="btn btn-error">Delete</button>
                                     </th>
                                 </tr>
                             )

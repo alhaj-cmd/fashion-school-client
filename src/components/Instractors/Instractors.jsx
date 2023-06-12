@@ -52,7 +52,7 @@ const Instractors = () => {
                   {instractor?.student}
                 </td>
                 <th>
-                  <button className="btn btn-error btn-xs">details</button>
+                  <button className="btn btn-error btn-md">details</button>
                 </th>
               </tr>
             )

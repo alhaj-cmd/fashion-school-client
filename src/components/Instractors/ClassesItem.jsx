@@ -106,7 +106,7 @@ const ClassesItem = () => {
                   {item?.price}
                 </td>
                 <th>
-                  <button onClick={() => handleAddToCart(item) } className="btn btn-error btn-xs">AddTo</button>
+                  <button onClick={() => handleAddToCart(item) } className="btn btn-error btn-md">AddTo</button>
                 </th>
               </tr>
             )
