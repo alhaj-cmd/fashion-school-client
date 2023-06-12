@@ -9,15 +9,14 @@ import Register from "../components/Register/Register";
 import Instractors from "../components/Instractors/Instractors";
 import Dashboard from "../Layout/Dashboard";
 import PrivetRoute from "./PrivetRoute";
-import AllUsers from "../Layout/AllUsers/AllUsers";
 import ClassesItem from "../components/Instractors/ClassesItem";
 import ManageClass from "../components/Pages/AdminDb/ManageClass";
-import ManageUser from "../components/Pages/AdminDb/ManageUser";
 import AddAclass from "../components/Pages/InstractorDb/AddAclass";
 import MyClass from "../components/Pages/InstractorDb/MyClass";
 import EnrolClass from "../components/Pages/StudentDb/EnrolClass";
 import PaymentClass from "../components/Pages/StudentDb/PaymentClass";
 import SelectedClass from "../components/Pages/StudentDb/SelectedClass";
+import ManageUsers from "../components/Pages/AdminDb/ManageUsers";
 
 
 
@@ -59,7 +58,7 @@ import SelectedClass from "../components/Pages/StudentDb/SelectedClass";
         },
         {
           path:'manageuser',
-          element:<ManageUser></ManageUser>
+          element:<ManageUsers></ManageUsers>
         },
         {
           path:'addAclass',
@@ -80,10 +79,6 @@ import SelectedClass from "../components/Pages/StudentDb/SelectedClass";
         {
           path:'payment',
           element:<PaymentClass></PaymentClass>
-        },
-        {
-          path:'allusers',
-          element:<AllUsers></AllUsers>
         }
       ]
     }

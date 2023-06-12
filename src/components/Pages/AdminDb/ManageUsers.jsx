@@ -4,7 +4,7 @@ import {  FaTrash, FaUserShield } from "react-icons/fa";
 import Swal from "sweetalert2";
 
 
-const AllUsers = () => {
+const ManageUsers = () => {
     const { data: users = [], refetch } = useQuery(['users'], async () => {
         const res = await fetch('http://localhost:5000/users')
         return res.json();
@@ -41,7 +41,7 @@ const AllUsers = () => {
                 Swal.fire({
                     position:'top-end',
                     icon:'success',
-                    title:`${user.name} is an Admin Instrator Now!`,
+                    title:`${user.name} is an  Instrator Now!`,
                     showConfirmButton:false,
                     timer:1500
                 })
@@ -59,11 +59,11 @@ const AllUsers = () => {
             <Helmet>
                 <title>Fashion school | All Users</title>
             </Helmet>
-            {users.length}
+            <h2 className="text-3xl">Manage Users : {users.length}</h2>
             <div className="overflow-x-auto">
                 <table className="table table-zebra">
                     {/* head */}
-                    <thead>
+                    <thead className="bg-red-300 text-2xl">
                         <tr>
                             <th>#</th>
                             <th>Name</th>
@@ -108,4 +108,4 @@ const AllUsers = () => {
     );
 };
 
-export default AllUsers;
+export default ManageUsers;
