@@ -14,15 +14,15 @@ const useAddCard = () => {
         enabled:!loading && !!user?.email,
 
         queryFn:async()=>{
-            // if(!loading && user?.email){
+    
 
                 const res = await axiosSecure(`/addCard?email=${user?.email}`)
                 return res.data;
-            // }
+           
         },
-        // enabled:!loading && !!user?.email
+       
     })
-    //addCart
+   
     return [cart, refetch]
 };
 

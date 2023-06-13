@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { Helmet } from "react-helmet";
-import {  FaTrash, FaUserShield } from "react-icons/fa";
+import {  FaUserShield } from "react-icons/fa";
 import Swal from "sweetalert2";
 import useAxios from "../../Hooks/useAxios";
 
@@ -51,10 +51,7 @@ const ManageUsers = () => {
         })
 
     }
-    const handleDelete = (user) => {
-        console.log(user);
-
-    }
+   
 
     return (
         <div>
@@ -96,7 +93,7 @@ const ManageUsers = () => {
                                     <td className="text-red-500">{user.role === 'instractor' ? 'instractor' :
                                         <button onClick={() => handleMakeInstrator(user)}><FaUserShield/></button>}
                                     </td>
-                                    <td className="text-red-500"><button onClick={() => handleDelete(user)}><FaTrash></FaTrash></button></td>
+                                   
                                 </tr>
 
                             )
