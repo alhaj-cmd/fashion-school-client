@@ -17,6 +17,8 @@ import EnrolClass from "../components/Pages/StudentDb/EnrolClass";
 import PaymentClass from "../components/Pages/StudentDb/PaymentClass";
 import SelectedClass from "../components/Pages/StudentDb/SelectedClass";
 import ManageUsers from "../components/Pages/AdminDb/ManageUsers";
+import InstractorRoute from "./InstractorRoute";
+import AdminRoute from "./AdminRoute";
 
 
 
@@ -54,19 +56,19 @@ import ManageUsers from "../components/Pages/AdminDb/ManageUsers";
       children:[
         {
           path:'manageclass',
-          element:<ManageClass></ManageClass>
+          element:<AdminRoute><ManageClass></ManageClass></AdminRoute>
         },
         {
           path:'manageuser',
-          element:<ManageUsers></ManageUsers>
+          element:<AdminRoute><ManageUsers></ManageUsers></AdminRoute>
         },
         {
           path:'addAclass',
-          element:<AddAclass></AddAclass>
+          element:<InstractorRoute><AddAclass></AddAclass></InstractorRoute>
         },
         {
           path:'myclass',
-          element:<MyClass></MyClass>
+          element:<InstractorRoute><MyClass></MyClass></InstractorRoute>
         },
         {
           path:'enrollclass',

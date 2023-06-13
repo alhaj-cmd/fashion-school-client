@@ -1,21 +1,22 @@
 
 import { Navigate, useLocation } from 'react-router-dom';
 import useAuth from '../components/Hooks/useAuth';
-import useAdmin from '../components/Hooks/useAdmin';
+import useInstract from '../components/Hooks/useInstract';
 
-const AdminRoute = ({children}) => {
+
+const InstractorRoute = ({children}) => {
     const {user, loading} = useAuth();
-    const [isAdmin, isAdminLoading]  = useAdmin();
+    const [isInstractor, isInstractorLoading]  = useInstract();
     const location = useLocation();
 
-    if(loading || isAdminLoading){
+    if(loading || isInstractorLoading){
         return <progress className='progress w-56'></progress>
     }
 
-    if(user && isAdmin){
+    if(user && isInstractor){
         return children;
     }
     return <Navigate to='/login' state={{from:location}} replace></Navigate>
 };
 
-export default AdminRoute;
+export default InstractorRoute;
