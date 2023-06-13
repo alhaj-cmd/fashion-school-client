@@ -28,8 +28,8 @@ const ClassesItem = () => {
         })
         .then(res => res.json())
         .then(data => {
+          console.log(data)
           if(data.insertedId){
-            console.log(data)
             refetch();
             Swal.fire({
               position: 'top-end',
