@@ -33,7 +33,8 @@ const AddAclass = () => {
                     const imgURL = imgRespose.data.display_url;
                     console.log(data,imgURL)
                     const { name, price, seats, instractor, Email } = data;
-                    const newItem = { name, price: parseFloat(price), seats, instractor, email:Email, image: imgURL, status:'pending'  }
+                    const newItem = { name, price: parseFloat(price), seats, instractor, email:Email, image: imgURL, status:'pending',    enrolled: parseInt(0),
+                    feedback: ''  }
                     console.log(newItem);
                     axiosSecure.post('/instractor', newItem)
                         .then(data => {

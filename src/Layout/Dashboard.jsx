@@ -2,11 +2,11 @@ import { FaClipboard, FaHome, FaMale, FaTable, FaWallet, FaAd, FaCalendarDay } f
 import { NavLink, Outlet } from "react-router-dom";
 import useAdmin from "../components/Hooks/useAdmin";
 import useInstract from "../components/Hooks/useInstract";
+import useClass from "../components/Hooks/useClass";
 
 
 const Dashboard = () => {
-  // const isAdmin = false;
-  // const isInstractor = false;
+  const [myclass] =useClass();
   const [isAdmin] = useAdmin();
   const [isInstractor] = useInstract();
   return (
@@ -40,7 +40,7 @@ const Dashboard = () => {
           {!isAdmin && !isInstractor && <>
             <li className="ml-4 p-2"><NavLink className="bg-red-400 " to="/"><FaHome /> Home</NavLink></li>
             <li className="ml-4 p-2"><NavLink className="bg-red-400 " to="/dashboard/selectedclass"><FaTable /> My selected Class</NavLink></li>
-            <li className="ml-4 p-2"><NavLink className="bg-red-400 " to="/dashboard/enrollclass"> <FaHome />My Enrolled Class</NavLink></li>
+            <li className="ml-4 p-2"><NavLink className="bg-red-400 " to="/dashboard/enrollclass"> <FaHome />My Enrolled Class<div className="badge badge-secondary">+{myclass?.length || 0}</div></NavLink></li>
             <li className="ml-4 p-2"><NavLink className="bg-red-400 " to="/dashboard/payment"><FaWallet />Payment</NavLink></li>
 
           </>}

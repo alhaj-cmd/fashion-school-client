@@ -3,6 +3,7 @@ import Category from "../Category/Category";
 import Banner from "./Banner";
 import PopularClass from "./PopularClass";
 import PopularInstractor from './PopularInstractor';
+import Header from './Header';
 
 
 const Home = () => {
@@ -11,10 +12,11 @@ const Home = () => {
             <Helmet>
                 <title>Fashion School | Home</title>
             </Helmet>
-            <Banner></Banner>
+            <Header></Header>
             <Category></Category>
             <PopularClass></PopularClass>
             <PopularInstractor></PopularInstractor>
+            <Banner></Banner>
         </div>
     );
 };
