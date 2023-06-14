@@ -1,3 +1,4 @@
+import { Fade } from 'react-awesome-reveal';
 import {  FaMale } from 'react-icons/fa';
 
 const InstractorItem = ({item}) => {
@@ -8,7 +9,9 @@ const InstractorItem = ({item}) => {
             <img style={{borderRadius:'0 200px 200px 200px'}} className="w-[150px]" src={image} alt="" />
             <div>
                 <h3 className="uppercase font-bold">{name} -----------</h3>
-                <p>{details}</p>
+              <Fade>
+              <p>{details}</p>
+              </Fade>
             </div>
             <p className="flex"><span className='text-red-400 font-bold'><FaMale /></span>{student}</p>
         </div>

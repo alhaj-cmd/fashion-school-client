@@ -15,36 +15,6 @@ const Login = () => {
 
   const from = location.state?.from?.pathname || "/";
 
-
-  // password show click hadle start
-  // const [type, setType] = useState('password');
-  // const [icon, setIcon] = useState(false);
-
-  // const handleToggle = () =>{
-  //   if(type === 'password'){
-  //     console.log('data',setType)
-  //    return setType(true);
-
-  //   }
-  //   else{
-  //     setType(false)
-  //   }
-  // }
-  // password show click hadle end
-
-  // const handleLogin = event => {
-  //   event.preventDefault();
-  //   const form = event.target;
-  //   const email = form.email.value;
-  //   const password = form.password.value;
-  //   // console.log(email,password);
-  //   signIn(email, password)
-  //     .then(result => {
-  //       const user = result.user;
-  //       console.log(user);
-  //     })
-
-  // }
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };

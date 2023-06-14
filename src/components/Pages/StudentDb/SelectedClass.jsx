@@ -26,7 +26,7 @@ const SelectedClass = () => {
                     if(data.deletedCount>0){
                         refetch()
                         Swal.fire(
-                          'Deleted!',
+                          'deleted!',
                           'Your file has been deleted.',
                           'success'
                         )
