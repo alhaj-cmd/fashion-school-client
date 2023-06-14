@@ -4,7 +4,7 @@ const useInstractor = () => {
     const [instractorItem, setinstractorItem] = useState([]);
     const [loading, setLoading] = useState(true);
     useEffect(() => {
-        fetch('http://localhost:5000/instractor')
+        fetch('https://y-wheat-rho.vercel.app/instractor')
         .then(res => res.json())
         .then(data => {
             setinstractorItem(data);

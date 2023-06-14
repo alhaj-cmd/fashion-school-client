@@ -19,7 +19,7 @@ const ClassesItem = () => {
       console.log(item)
       if(user && user.email){
         const orderItem ={name:item.name, classId:item._id, Instractor:item.instructor_name, image:item.image, price:item.price, email:user.email}
-        fetch('http://localhost:5000/addCard',{
+        fetch('https://y-wheat-rho.vercel.app/addCard',{
           method:'POST',
           headers:{
             'content-type':'application/json'

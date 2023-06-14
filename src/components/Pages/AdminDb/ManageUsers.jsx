@@ -14,7 +14,7 @@ const ManageUsers = () => {
 
     const handleMakeAdmin = (user) => {
         // console.log(id);
-        fetch(`http://localhost:5000/users/admin/${user._id}`,{
+        fetch(`https://y-wheat-rho.vercel.app/users/admin/${user._id}`,{
             method:'PATCH'
         })
         .then(res => res.json() )
@@ -33,7 +33,7 @@ const ManageUsers = () => {
 
     }
     const handleMakeInstrator = (user) => {
-        fetch(`http://localhost:5000/users/instractor/${user._id}`,{
+        fetch(`https://y-wheat-rho.vercel.app/users/instractor/${user._id}`,{
             method:'PATCH'
         })
         .then(res => res.json() )

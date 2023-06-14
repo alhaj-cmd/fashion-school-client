@@ -5,7 +5,7 @@ const useHook = () => {
     const [item, setItem] = useState([]);
     const [loading, setLoading] = useState(true);
     useEffect(() => {
-        fetch('http://localhost:5000/student')
+        fetch('https://y-wheat-rho.vercel.app/student')
         .then(res => res.json())
         .then(data => {
             setItem(data);
