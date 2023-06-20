@@ -3,10 +3,14 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../Providers/Authprovider";
 import { useState } from "react";
 import { useEffect } from "react";
+import useInstract from "../Hooks/useInstract";
+import useAdmin from "../Hooks/useAdmin";
 
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
+    const [isAdmin] = useAdmin();
+    const [isInstractor] = useInstract();
     console.log(user);
     const [theme, setTheme] = useState('light');
 
@@ -42,7 +46,13 @@ const Navbar = () => {
                             <li><Link>Classes</Link></li>
 
                             {
-                                user && <li><Link to='/dashboard/mycart'>DashBoard</Link></li>
+                                isAdmin && <li><Link to='/dashboard/manageuser'>DashBoard</Link></li>
+                            }
+                            {
+                                isInstractor && <li><Link to='/dashboard/addAclass'>DashBoard</Link></li>
+                            }
+                            {
+                                !isAdmin && !isInstractor && <li><Link to='/dashboard/selectedclass'>DashBoard</Link></li>
                             }
 
                         </ul>
@@ -55,9 +65,14 @@ const Navbar = () => {
                         <li><Link to='/instrators'>Instructors</Link></li>
                         <li><Link to='/classitem'>Classes</Link></li>
 
-                        {/* <input onClick={handleToggle} type="checkbox" className="toggle toggle-error" checked /> */}
                         {
-                            user && <li><Link to='/dashboard'>DashBoard</Link></li>
+                            isAdmin && <li><Link to='/dashboard/manageuser'>DashBoard</Link></li>
+                        }
+                        {
+                            isInstractor && <li><Link to='/dashboard/addAclass'>DashBoard</Link></li>
+                        }
+                        {
+                            !isAdmin && !isInstractor && <li><Link to='/dashboard/selectedclass'>DashBoard</Link></li>
                         }
                         <label className="swap swap-rotate">
 

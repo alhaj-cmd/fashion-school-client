@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/Authprovider";
@@ -7,7 +7,10 @@ import SocialLogin from "../Login/SocialLogin";
 
 
 const Register = () => {
-  const { register, handleSubmit, reset,  formState: { errors } } = useForm();
+  const { register, handleSubmit, reset, getValues,  watch,  formState: { errors } } = useForm();
+  const password = useRef({});
+
+  password.current = watch("password", "");
   const {createUser, updateUserProfile} = useContext(AuthContext);
 const navigate = useNavigate();
 
@@ -49,6 +52,7 @@ const navigate = useNavigate();
     })
   };
 
+  console.log(watch("password"));
 
   return (
 
@@ -84,7 +88,11 @@ const navigate = useNavigate();
                 <label className="label">
                   <span className="label-text">Confirm Password</span>
                 </label>
-                <input {...register("password", { required: true, minLength:6, maxLength:15 })} type='password' className="input input-bordered" />
+                <input {...register("password-repeat", { required: true, minLength:6, maxLength:15 })} type='password' className="input input-bordered" />
+                {watch("password_repeat") !== watch("password") &&
+      getValues("password_repeat") ? (
+        <p>password not match</p>
+      ) : null}
                 {errors.password?.type === 'required' && <span className="text-primary">Confirm password is required</span>}
 
               </div>
